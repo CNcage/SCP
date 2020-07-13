@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Subject: {{monster.monster_name}}{% endblock %}
+{% block content %}
+
+SIGHTINGS HERE:
+        {% for monster in monsters.all %}
+        <div class="hw">{{monster}}</div>
+        {% empty %}
+        LOCATIONS COMING SOON!
+        {% endfor %}
+
+{% endblock %}

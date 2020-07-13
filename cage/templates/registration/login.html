@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<!-- need to hide navbar on this page -->
+<div class="login">
+  <br><br><br>
+  <h1>Welcome to the SCP Foundation UK Database</h1>
+  <br>
+  <h1>WARNING!</h1>
+  <h2>Only authorised personnel allowed beyong this point.<br>Please log in to access the SCP database.</h2>
+  <br><br>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <button type="submit">LOGIN</button>
+  </form>
+  <div draggable="true" id="note">
+    <img src="/static/cage/img/password.png">
+  </div>
+  <br><br><br><br><br><br><br><br>
+  <p id="edu">- for educational purposes only -</p>
+</div>
+{% endblock %}

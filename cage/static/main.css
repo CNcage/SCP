@@ -1,0 +1,255 @@
+*{
+    border: 0px;
+    margin: 0px;
+    font-family: "Helvetica";
+}
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+h1{
+    font-family: 'Baumans', cursive;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.header {
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.header ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+.header ul li a{
+    text-decoration: none;
+    color: black;
+}
+#logo {
+    width: 60px;
+    padding: 12px;
+    animation: rotate-center 5s linear infinite both;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* id="logo" */
+@keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+#note{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    user-select: none
+}
+
+#monsterpic {
+    width: 300px;
+    
+}
+
+.polaroid{
+    display: block;
+    width: 220px;
+    background-color: white;
+    border: solid white 6px;
+    border-bottom: solid white 40px;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: ease-in-out 200ms;
+    margin: 20px;
+    filter: grayscale(100%);
+    transform: rotate(-2deg);
+}
+.polaroid img{
+    opacity: 0.3;
+    background-color: #353535;
+    display: block;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+}
+.polaroid img:hover{
+    animation: develop 200ms;
+    animation-fill-mode: forwards;
+}
+.polaroid:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+#profilePage{
+    padding: 30px;
+    position: relative;
+    /* display: flex;
+    flex-direction: row; */
+    transform: rotate(-1deg);
+    margin:0 auto;
+    width: 650px;
+    background: rgb(177, 61, 61);
+    box-shadow: 4px 4px 6px rgba(0,0,0,.2), inset 0 0 50px #d8d8c2a8;
+    background-image: url("/static/cage/img/paper_bg0.png");
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.v1{
+    border-left: medium dashed #4b4b4b;
+    height: 100px;
+    position: absolute;
+    left: 10px
+}
+
+#profileTitle{
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+#profileContent{
+    padding: 20px;
+}
+
+.hw{
+    font-size: larger;
+    font-family: 'Special Elite', cursive;
+}
+
+#profilePic{
+    position: absolute;
+    left: 500px;
+    top: 0px;
+    width: 200px;
+    width: 300px;
+    transform: rotate(3deg);
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    border: solid white 4px;
+}
+
+#profileClip{
+    position: absolute;
+    left: 580px;
+    top: -20px;
+    width: 45px;
+    transform: rotate(-7deg);
+    z-index: 1;
+    user-select: none
+}
+
+ul {
+    list-style-type: none;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+#allMonsters {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@keyframes develop {
+    0% { opacity: 0.5; }
+    10% { opacity: 0.55; }
+    20% { opacity: 0.6; }
+    30% { opacity: 0.65; }
+    40% { opacity: 0.7; }
+    50% { opacity: 0.75; }
+    60% { opacity: 0.8; }
+    70% { opacity: 0.85; }
+    80% { opacity: 0.90; }
+    90% { opacity: 0.95; }
+    100% { opacity: 1; }
+}
+
+@keyframes shakeIn {
+    0% {rotate: -10deg;}
+    50% {rotate: +10deg;}
+    100% {rotate: -10deg;}
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login img {
+    position: absolute;
+    top: 250px; 
+    left: 100px;
+    width: 250px;
+    transform: rotate(-7deg);
+}
+
+#note {
+    -webkit-user-drag: element;
+}
+
+.login button {
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 15px;
+    box-shadow: 1px 1px 5px silver;
+}
+
+.login form input {
+    width: 200px;
+    padding: 12px;
+    margin: 8px;
+    box-shadow: 1px 1px 5px silver;
+}
+
+#edu {
+    font-style: italic;
+    font-size: 10px;
+}
+
+#knownLocations {
+    text-align: center;
+}
+
+#locationPage {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 150px;
+    line-height: 220%;
+    font-size: 18px;
+}
+
+#map {
+    height: 550px;
+}

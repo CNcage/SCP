@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Subject: {{monster.monster_name}}{% endblock %}
+{% block content %}
+<br><br>
+<div id="profilePage"><div class="vl"></div><div class="v2"></div>
+    <div id="profileTitle"><h1>SCP</h1>
+    <h2>Secure. Contain. Protect</h2></div>
+    <br>
+    <img id="profileClip" src="{% static 'cage/img/clip.png' %}">
+    <img id="profilePic" src="/uploads/{{ monster.image }}">
+    <div id="profileInfo">
+    <div id=profileName>NAME:
+        <div class="hw">{{monster.monster_name}}</div>
+        <br><br>
+        TYPE:
+        <div class="hw">{{monster.behaviour_type}}</div>
+        <br><br>
+        DISCOVERED:
+        <div class="hw">{{monster.date}}</div>
+        <br><br>
+        DESCRIPTION:
+        <div class="hw">{{monster.description}}</div>
+        <br><br>
+        KNOWN LOCATIONS:
+        {% for location in monster.location_set.all %}
+        <br><br>
+        <a href="{% url 'detail' location.id %}">
+        <div class="hw">{{location.name}}</div>
+        </a>
+        {% empty %}
+        No Locations
+        {% endfor %}
+    </div>
+    </div>
+</div>
+<body onload="document.body.className += ' loaded';" class="fadein"></body>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} NOT NCP {% endblock %}
+{% block content %}
+<br><br>
+<div id="locationPage">
+    <div id="knownLocations">
+        <br>
+        KNOWN LOCATIONS:
+        {% for location in locations %}
+        <a href="{% url 'sightings' location.id %}">
+            <div class="hw">{{ location.name }}</div>
+        </a>
+        {% empty %}
+        No Locations
+        {% endfor %}
+    </div>
+    <div id="mapDiv">
+        <img id="map" src="/static/cage/img/map0.jpg">
+    </div>
+</div>
+
+<body onload="document.body.className += ' loaded';" class="fadein"></body>
+{% endblock %}
